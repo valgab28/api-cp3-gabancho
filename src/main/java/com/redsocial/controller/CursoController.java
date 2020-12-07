@@ -25,7 +25,7 @@ public class CursoController {
 	}
 	
 	@GetMapping("/porNombre/{filtro}")
-	public ResponseEntity<List<Curso>> listaPorNombre(@PathVariable String filtro){
-		return ResponseEntity.ok(service.listaCursoPorNombre(filtro));
+	public ResponseEntity<List<Curso>> listaPorNombre(@PathVariable("filtro") String fil){
+		return ResponseEntity.ok(service.listaCursoPorNombre(fil+"%"));
 	}
 }
